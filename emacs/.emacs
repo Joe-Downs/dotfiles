@@ -19,6 +19,9 @@
 (setq keywords-file (concat home-emacs-d "keywords.el"))
 (load keywords-file)
 
+;; Custon functions for (re-)use in things like snippets
+(load (concat home-emacs-d "functions.el"))
+
 ;; Enable installation of packages from MELPA (Milkypostman's Emacs Lisp Package
 ;; Archive). Code below taken from https://melpa.org/#/getting-started
 (require 'package)
