@@ -4,8 +4,12 @@
 # Ignore other backup / autosave files
 \#*\#
 
-# Ignore pycache directories
+# Python
+## Ignore pycache directories
 **/__pycache__/
+
+## Ignore venv directories
+.venv/
 
 # Ignore database (.db) files
 *.db
