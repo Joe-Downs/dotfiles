@@ -268,3 +268,6 @@
   :hook (python-mode . (lambda () (require 'lsp-pyright)))
   :init (when (executable-find "python3")
           (setq lsp-pyright-python-executable-cmd "python3")))
+
+(use-package python-docstring
+  :hook (python-mode . python-docstring-mode))
