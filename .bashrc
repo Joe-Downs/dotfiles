@@ -15,7 +15,9 @@ fi
 # colors incorrectly.
 export TERM=xterm-256color
 
-export PS1="\[\e[1;32m\][\T]\[\e[0;33m\]\u@$HOSTNAME:\[\e[31m\]\w\[\e[0m\]
+# Commandline Prompt (See BASH(1) man page, section PROMPTING for escape
+# characters)
+export PS1="\[\e[1;32m\][\t]\[\e[0;33m\]\u@$HOSTNAME:\[\e[31m\]\w\[\e[0m\]
 \[\e[1;36m\]$prompt_char\[\e[0m\] "
 
 # Set ~/go as $GOPATH
