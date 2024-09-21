@@ -169,8 +169,13 @@
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
+;; Assembly
 ;;; nasm-mode
 (require 'nasm-mode)
+
+;;; arm-mode
+(add-to-list 'load-path "~/.emacs.d/elpa/arm-mode")
+  (require 'arm-mode)
 
 ;;; poporg
 (autoload 'poporg-dwim "poporg" nil t)
@@ -271,3 +276,4 @@
 
 (use-package python-docstring
   :hook (python-mode . python-docstring-mode))
+
