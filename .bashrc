@@ -69,6 +69,8 @@ fi
 
 # Syntax highlight when printing out file contents
 alias ccat='pygmentize -O style=rrt -g'
+alias rich='rich -ng'
+alias richp='rich --pager'
 
 # If we're on Linux, alias 'xdg-open' to be just 'open'. This is hopefully to
 # avoid breaking it on Mac, since they have 'open' by default (if I ever even go
