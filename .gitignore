@@ -11,5 +11,8 @@
 ## Ignore venv directories
 .venv/
 
+## Ignore ipynb checkpoints
+.ipynb_checkpoints/
+
 # Ignore database (.db) files
 *.db
