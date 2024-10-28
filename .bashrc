@@ -49,11 +49,10 @@ fi
 
 
 # User specific aliases and functions
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-source /usr/share/doc/fzf/examples/key-bindings.bash
-source /usr/share/doc/fzf/examples/completion.bash
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
 
 # enable color support of ls (and group directories first) and also add handy
 # aliases
