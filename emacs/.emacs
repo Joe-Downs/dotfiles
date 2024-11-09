@@ -269,6 +269,10 @@
 (use-package lsp-java
   :after lsp)
 
+(use-package lsp-julia
+  :config (setq lsp-julia-default-environment "~/.julia/environments/v1.7")
+  :hook (julia-mode . (lambda () require 'lsp-julia)))
+
 (use-package lsp-pyright
   :hook (python-mode . (lambda () (require 'lsp-pyright)))
   :init (when (executable-find "python3")
