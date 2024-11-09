@@ -16,6 +16,9 @@
  '(lsp-ui-doc-show-with-cursor t)
  '(org-agenda-files '("~/Documents/org-testing.org"))
  '(org-cite-global-bibliography '("~/git/roam-notes/refs.bib"))
+ '(org-format-latex-options
+   '(:foreground default :background default :scale 1.3 :html-foreground "Black" :html-background "Transparent" :html-scale 1.0 :matchers
+                 ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(org-support-shift-select t)
  '(package-selected-packages
    '(hl-sentence julia-mode python-docstring toml-mode powershell list-unicode-display dockerfile-mode docker kotlin-mode poporg lsp-latex lsp-pyright lsp-java helm-lsp lsp-ui sideline-lsp auto-complete-rst multiple-cursors graphviz-dot-mode sql-indent nasm-mode lorem-ipsum yasnippet-snippets yasnippet groovy-mode helm-projectile projectile helm-ag helm-swoop diredfl elcord helm use-package org-roam company-anaconda anaconda-mode bibtex-utils gemini-mode elpher magit fzf rainbow-identifiers rainbow-delimiters company-fuzzy company-c-headers company yaml yaml-mode json-mode banner-comment auctex web-mode fill-column-indicator latex-extra gh-md markdown-mode wucuo))
