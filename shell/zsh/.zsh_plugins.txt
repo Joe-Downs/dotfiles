@@ -1,0 +1,5 @@
+# -*- mode: conf; -*-
+
+# fzf stuff
+unixorn/fzf-zsh-plugin
+Aloxaf/fzf-tab
