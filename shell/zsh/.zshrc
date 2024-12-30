@@ -13,6 +13,9 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Use antidote
+source '/usr/share/zsh-antidote/antidote.zsh'
+antidote load ~/git/dotfiles/shell/zsh/.zsh_plugins.txt
 
 # Variable to hold a newline so that we can have multi-line prompts. zsh is
 # kinda weird about them (sending them down in to another line, but I can't
