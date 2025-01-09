@@ -44,3 +44,7 @@ bindkey '\e[2~' redisplay
 
 # Now bind pgup to paste the last word of the last command,
 bindkey '\e[5~' insert-last-word
+
+
+# =================================== Aliases ==================================
+alias ls='ls --color=auto --group-directories-first'
