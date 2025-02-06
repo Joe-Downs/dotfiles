@@ -49,6 +49,12 @@ bindkey '\e[2~' redisplay
 # Now bind pgup to paste the last word of the last command,
 bindkey '\e[5~' insert-last-word
 
+# Use CTRL + <LEFT|RIGHT> to move between words
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+# Use ALT + <LEFT|RIGHT> to move between words
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 
 # =================================== Aliases ==================================
 alias ls='ls --color=auto --group-directories-first'
