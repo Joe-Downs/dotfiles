@@ -24,7 +24,7 @@ NEWLINE=$'\n'
 PS1="%F{green}[%*]%F{yellow}%n@%m:%F{red}%~${NEWLINE}%F{cyan}%(!.#.$)%f "
 
 # ================================= $PATH Setup ================================
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.build/ompi:$HOME/.local/bin:$PATH"
 
 # ================================ Movement Keys ===============================
 # A few special movement keys don't work in Zsh like they did in Bash Solution
