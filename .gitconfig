@@ -29,3 +29,8 @@
 	template = /home/joe/git/dotfiles/.gitmessage.txt
 [init]
 	defaultBranch = main
+
+# Use work .gitconfig
+[includeIf "gitdir:~/git-work/"]
+        path = ~/git-work/.gitconfig
+        sshCommand = ssh -i ~/.ssh/id_ed25519.work
