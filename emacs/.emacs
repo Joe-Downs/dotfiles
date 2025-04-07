@@ -281,3 +281,4 @@
 (use-package python-docstring
   :hook (python-mode . python-docstring-mode))
 
+(put 'upcase-region 'disabled nil)
