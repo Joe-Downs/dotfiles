@@ -188,7 +188,7 @@
 (helm-projectile-on)
 (projectile-mode +1)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-(setq projectile-project-search-path '("~/git/" "~/git/.dev/" "~/git/.installs" "~/git-work/"))
+(setq projectile-project-search-path '("~/git/" "~/git/.dev/" "~/git/.installs" "~/git-work/" "~/git/open-mpi/"))
 (setq projectile-auto-discover t)
 
 ;;; Yasnippet
