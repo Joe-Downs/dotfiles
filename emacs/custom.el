@@ -8,6 +8,7 @@
  '(bibtex-comment-start "%")
  '(display-fill-column-indicator-character 124)
  '(elcord-refresh-rate 5)
+ '(elcord-use-major-mode-as-main-icon t)
  '(fill-column 80)
  '(fringe-mode 0 nil (fringe))
  '(helm-full-frame t)
