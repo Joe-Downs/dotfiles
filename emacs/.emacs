@@ -25,6 +25,9 @@
 ;; Disable the menu bar
 (menu-bar-mode 0)
 
+;; Use mood-line for a simpler mode line display
+(mood-line-mode 1)
+
 ;; Enable installation of packages from MELPA (Milkypostman's Emacs Lisp Package
 ;; Archive). Code below taken from https://melpa.org/#/getting-started
 (require 'package)

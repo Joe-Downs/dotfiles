@@ -32,11 +32,12 @@
                    helm-ag helm-lsp helm-projectile helm-swoop hl-sentence
                    json-mode julia-mode kotlin-mode latex-extra
                    list-unicode-display lorem-ipsum lsp-java lsp-julia lsp-latex
-                   lsp-pyright lsp-ui magit markdown-mode multiple-cursors
-                   nasm-mode org-roam org-roam-ui poporg powershell projectile
-                   python-docstring rainbow-delimiters rainbow-identifiers
-                   sideline-lsp sql-indent toml-mode use-package web-mode wucuo
-                   yaml yaml-mode yasnippet yasnippet-snippets))
+                   lsp-pyright lsp-ui magit markdown-mode mood-line
+                   multiple-cursors nasm-mode org-roam org-roam-ui poporg
+                   powershell projectile python-docstring rainbow-delimiters
+                   rainbow-identifiers sideline-lsp sql-indent toml-mode
+                   use-package web-mode wucuo yaml yaml-mode yasnippet
+                   yasnippet-snippets))
  '(save-place-mode t)
  '(scroll-bar-mode nil)
  '(scroll-down-aggressively 0.25)
@@ -76,6 +77,7 @@
  '(magit-hash ((t (:foreground "#cdcd00"))))
  '(magit-section-highlight ((t (:extend t :background "#005fff"))))
  '(minibuffer-prompt ((t (:foreground "#00ffff"))))
+ '(mood-line-unimportant ((t (:foreground "indian red" :weight bold))))
  '(org-formula ((t (:foreground "#5fd75f"))))
  '(org-table ((t (:foreground "#5c5cff"))))
  '(outline-1 ((t (:foreground "#ffafff"))))
