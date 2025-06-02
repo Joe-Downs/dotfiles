@@ -23,7 +23,18 @@
  '(org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
  '(org-support-shift-select t)
  '(package-selected-packages
-   '(org-roam-ui lsp-julia hl-sentence julia-mode python-docstring toml-mode powershell list-unicode-display dockerfile-mode docker kotlin-mode poporg lsp-latex lsp-pyright lsp-java helm-lsp lsp-ui sideline-lsp auto-complete-rst multiple-cursors graphviz-dot-mode sql-indent nasm-mode lorem-ipsum yasnippet-snippets yasnippet groovy-mode helm-projectile projectile helm-ag helm-swoop diredfl elcord helm use-package org-roam company-anaconda anaconda-mode bibtex-utils gemini-mode elpher magit fzf rainbow-identifiers rainbow-delimiters company-fuzzy company-c-headers company yaml yaml-mode json-mode banner-comment auctex web-mode fill-column-indicator latex-extra gh-md markdown-mode wucuo))
+   '(anaconda-mode auctex auto-complete-rst banner-comment bibtex-utils company
+                   company-anaconda company-c-headers company-fuzzy diredfl
+                   docker dockerfile-mode elcord elpher fill-column-indicator
+                   fzf gemini-mode gh-md graphviz-dot-mode groovy-mode helm
+                   helm-ag helm-lsp helm-projectile helm-swoop hl-sentence
+                   json-mode julia-mode kotlin-mode latex-extra
+                   list-unicode-display lorem-ipsum lsp-java lsp-julia lsp-latex
+                   lsp-pyright lsp-ui magit markdown-mode multiple-cursors
+                   nasm-mode org-roam org-roam-ui poporg powershell projectile
+                   python-docstring rainbow-delimiters rainbow-identifiers
+                   sideline-lsp sql-indent toml-mode use-package web-mode wucuo
+                   yaml yaml-mode yasnippet yasnippet-snippets))
  '(save-place-mode t)
  '(scroll-bar-mode nil)
  '(scroll-down-aggressively 0.25)
