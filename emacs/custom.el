@@ -30,7 +30,7 @@
                    docker dockerfile-mode elcord elpher fill-column-indicator
                    fzf gemini-mode gh-md graphviz-dot-mode groovy-mode helm
                    helm-ag helm-lsp helm-projectile helm-swoop hl-sentence
-                   json-mode julia-mode kotlin-mode latex-extra
+                   json-mode julia-mode kotlin-mode latex-extra ligature
                    list-unicode-display lorem-ipsum lsp-java lsp-julia lsp-latex
                    lsp-pyright lsp-ui magit markdown-mode mood-line
                    multiple-cursors nasm-mode org-roam org-roam-ui poporg
@@ -54,7 +54,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :extend nil :stipple nil :background "#232627" :foreground "#fcfcfc" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 120 :width normal :foundry "PfEd" :family "DejaVu Sans Mono"))))
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "#232627" :foreground "#fcfcfc" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 120 :width normal :foundry "PfEd" :family "Firacode"))))
  '(custom-group-tag ((t (:inherit variable-pitch :foreground "#d7d700" :weight bold :height 1.2))))
  '(custom-variable-tag ((t (:foreground "#af5f00" :weight bold))))
  '(fill-column-indicator ((t (:foreground "#cd0000"))))
