@@ -7,3 +7,6 @@ Aloxaf/fzf-tab
 # ohmyzsh plugins
 getantidote/use-omz
 ohmyzsh/ohmyzsh path:plugins/wakeonlan
+
+# Misc
+mollifier/cd-gitroot
