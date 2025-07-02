@@ -36,8 +36,8 @@
                    multiple-cursors nasm-mode org-roam org-roam-ui poporg
                    powershell projectile python-docstring rainbow-delimiters
                    rainbow-identifiers sideline-lsp sql-indent toml-mode
-                   use-package web-mode wucuo yaml yaml-mode yasnippet
-                   yasnippet-snippets))
+                   treemacs-projectile use-package web-mode wucuo yaml yaml-mode
+                   yasnippet yasnippet-snippets))
  '(save-place-mode t)
  '(scroll-bar-mode nil)
  '(scroll-down-aggressively 0.25)
@@ -46,6 +46,9 @@
  '(sentence-end-double-space nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
+ '(treemacs-eldoc-display 'detailed)
+ '(treemacs-indent-guide-mode t)
+ '(treemacs-indent-guide-style 'line)
  '(truncate-lines t)
  '(truncate-partial-width-windows nil))
 
