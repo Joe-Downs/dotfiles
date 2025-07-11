@@ -34,10 +34,10 @@
                    list-unicode-display lorem-ipsum lsp-java lsp-julia lsp-latex
                    lsp-pyright lsp-ui magit markdown-mode mood-line
                    multiple-cursors nasm-mode org-roam org-roam-ui poporg
-                   powershell projectile python-docstring rainbow-delimiters
-                   rainbow-identifiers sideline-lsp sql-indent toml-mode
-                   treemacs-projectile use-package web-mode wucuo yaml yaml-mode
-                   yasnippet yasnippet-snippets))
+                   powershell projectile python-docstring pyvenv
+                   rainbow-delimiters rainbow-identifiers sideline-lsp
+                   sql-indent toml-mode treemacs-projectile use-package web-mode
+                   wucuo yaml yaml-mode yasnippet yasnippet-snippets))
  '(save-place-mode t)
  '(scroll-bar-mode nil)
  '(scroll-down-aggressively 0.25)
