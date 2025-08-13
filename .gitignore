@@ -3,6 +3,7 @@
 
 # Ignore other backup / autosave files
 \#*\#
+.\#*
 
 # Python
 ## Ignore pycache directories
