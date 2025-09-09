@@ -356,7 +356,9 @@
                           ;; Fira code:
                           "Fl"  "Tl"  "fi"  "fj"  "fl"  "ft"
                           ;; The few not covered by the regexps.
-                          "{|"  "[|"  "]#"  "(*"  "}#"  "$>"  "^="))
+                          "{|"  "[|"  "]#"  "(*"  "}#"  "$>"  "^="
+                          ;; Miracode
+                          "TODO:" "NOTE:"))
   ;; Enables ligature checks globally in all buffers. You can also do it
   ;; per mode with `ligature-mode'.
   (global-ligature-mode t))
