@@ -1,6 +1,11 @@
 ;;;; org-mode Customization
 (setq org-adapt-indentation t)
 
+;; Automatically toggle LaTeX fragments in org-mode when cursor is over them
+(use-package org-fragtog
+:hook (org-mode . org-fragtog) ; this auto-enables it when you enter an org-buffer
+)
+
 ;;; org-roam Customization
 ;; Sample Config from the git repo
 (use-package org-roam
