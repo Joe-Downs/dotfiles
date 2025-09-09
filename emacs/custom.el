@@ -57,7 +57,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :extend nil :stipple nil :background "#232627" :foreground "#fcfcfc" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 120 :width normal :foundry "PfEd" :family "Firacode"))))
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "#232627" :foreground "#fcfcfc" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 120 :width normal :foundry "CTDB" :family "Firacode"))))
+ '(bold ((t (:weight heavy))))
  '(custom-group-tag ((t (:inherit variable-pitch :foreground "#d7d700" :weight bold :height 1.2))))
  '(custom-variable-tag ((t (:foreground "#af5f00" :weight bold))))
  '(fill-column-indicator ((t (:foreground "#cd0000"))))
@@ -77,6 +78,8 @@
  '(helm-ff-file-extension ((t (:extend t :inherit diredfl-file-suffix))))
  '(helm-ff-symlink ((t (:inherit diredfl-symlink :extend t))))
  '(helm-ff-truename ((t (:inherit diredfl-file-name :extend t))))
+ '(helm-selection ((t (:extend t :background "ForestGreen" :distant-foreground "black" :foreground "black"))))
+ '(italic ((t (:slant italic :family "Fira Mono"))))
  '(magit-hash ((t (:foreground "#cdcd00"))))
  '(magit-section-highlight ((t (:extend t :background "#005fff"))))
  '(minibuffer-prompt ((t (:foreground "#00ffff"))))
