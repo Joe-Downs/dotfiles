@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: mpiconst Category
+# key: mpiconst
+# expand-env: ((yas-after-exit-snippet-hook #'banner-comment))
+# --
+
+${1:Enter category name here}$0
+userfuncs._clear_globals()
+
+category(name="$1",
+         value_type="mpiconst",
+         c_type="int",
+         f_type="INTEGER",
+         f_type_str="\\\\ftype{INTEGER}")

@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: MPI ABI Value
+# key: value
+# --
+
+value("MPI_$1",
+      abi_value=$2,
+      c_type="MPI_$3",
+      f_type="${4:INTEGER}",
+      f08_type="TYPE(MPI_$3)")
+$0
