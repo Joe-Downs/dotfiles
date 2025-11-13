@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: Example Duck Figure
+# key: exduck
+# --
+
+\begin{figure}
+  \centering
+  \includegraphics[width=${1:0.8}\linewidth]{example-image-duck}
+  \caption{${2:Placeholder duck image}}
+\end{figure}
+
+$0
