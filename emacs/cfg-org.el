@@ -28,7 +28,8 @@
        (when (> level 0) (concat (org-roam-node-file-title node) " > "))
        (when (> level 1) (concat (string-join (org-roam-node-olp node) " > ") " > "))
        (org-roam-node-title node))))
-  (setq org-roam-node-display-template (concat "${hierarchy:*} " (propertize "${tags:50}" 'face 'org-tag)))
+  ;; TODO: this should be percentage based, or right-align the tags
+  (setq org-roam-node-display-template (concat "${hierarchy:*} " (propertize "${tags:*}" 'face 'org-tag)))
   (org-roam-db-autosync-mode)
   ;; If using org-roam-protocol
   (require 'org-roam-protocol))
