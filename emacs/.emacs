@@ -180,8 +180,8 @@
 (require 'nasm-mode)
 
 ;;; arm-mode
-(add-to-list 'load-path "~/.emacs.d/elpa/arm-mode")
-  (require 'arm-mode)
+;;(add-to-list 'load-path "~/.emacs.d/elpa/arm-mode")
+;;  (require 'arm-mode)
 
 ;;; poporg
 (autoload 'poporg-dwim "poporg" nil t)
