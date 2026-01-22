@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Lecture Tags (CSE)
+# key: lectags
+# --
+#+filetags: cse lecture graduate school
