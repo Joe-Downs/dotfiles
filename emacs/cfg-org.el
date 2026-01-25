@@ -18,7 +18,17 @@
          ("C-c n i" . org-roam-node-insert)
          ("C-c n c" . org-roam-capture)
          ;; Dailies
-         ("C-c n j" . org-roam-dailies-capture-today))
+         ("C-c n j" . org-roam-dailies-capture-today)
+         ;; Only bind these when we're in org-mode, since we'll only use them
+         ;; within a file, not globally like the above
+         :map org-mode-map
+         ("C-c a t" . org-roam-tag-add)
+         ("C-c a a" . org-roam-alias-add)
+         ("C-c a r" . org-roam-ref-add)
+         ("C-c r t" . org-roam-tag-remove)
+         ("C-c r a" . org-roam-alias-remove)
+         ("C-c r r" . org-roam-ref-remove)
+         )
   :config
   ;; Define method to get the hierarchy for (sub)heading nodes. Display
   ;; something like: Title > Heading > Subheading
