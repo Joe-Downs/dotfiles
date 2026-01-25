@@ -168,6 +168,15 @@
             (auto-fill-mode 1)
             (font-lock-mode 1)))
 
+;;; Godot
+(use-package gdscript-mode
+  :config
+  ;; gdscript-mode tests that the file exists and is executable, so looks like
+  ;; we can't easily run godot via steam right now
+  ;;(setq gdscript-godot-executable "steam steam://rungameid/404790")
+  :bind (("C-c d" . gdscript-debug-hydra))
+  )
+
 ;;; multiple-cursors
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
