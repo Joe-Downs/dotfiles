@@ -1,3 +1,5 @@
 SRC += muse.c
 AUDIO_ENABLE = yes
 COMMAND_ENABLE = yes
+STENO_ENABLE = yes
+STENO_PROTOCOL = geminipr
