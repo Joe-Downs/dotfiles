@@ -192,6 +192,9 @@
 ;;(add-to-list 'load-path "~/.emacs.d/elpa/arm-mode")
 ;;  (require 'arm-mode)
 
+;;; pdf-tools
+(pdf-loader-install) ; On demand loading, leads to faster startup time
+
 ;;; poporg
 (autoload 'poporg-dwim "poporg" nil t)
 (global-set-key (kbd "C-c \"") 'poporg-dwim)
@@ -371,3 +374,8 @@
   ;; Enables ligature checks globally in all buffers. You can also do it
   ;; per mode with `ligature-mode'.
   (global-ligature-mode t))
+
+;; zotxt
+(use-package zotxt
+  :hook (org-mode . org-zotxt-mode)
+ )

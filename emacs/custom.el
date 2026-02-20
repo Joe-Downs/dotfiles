@@ -35,10 +35,10 @@
                    ligature list-unicode-display lorem-ipsum lsp-java lsp-julia
                    lsp-latex lsp-pyright lsp-ui magit markdown-mode mood-line
                    multiple-cursors nasm-mode org-fragtog org-roam org-roam-ui
-                   poporg powershell projectile python-docstring pyvenv
-                   rainbow-delimiters rainbow-identifiers sideline-lsp
+                   pdf-tools poporg powershell projectile python-docstring
+                   pyvenv rainbow-delimiters rainbow-identifiers sideline-lsp
                    sql-indent toml-mode treemacs-projectile use-package web-mode
-                   wucuo yaml yaml-mode yasnippet yasnippet-snippets))
+                   wucuo yaml yaml-mode yasnippet yasnippet-snippets zotxt))
  '(save-place-mode t)
  '(scroll-bar-mode nil)
  '(scroll-down-aggressively 0.25)
@@ -51,7 +51,8 @@
  '(treemacs-indent-guide-mode t)
  '(treemacs-indent-guide-style 'line)
  '(truncate-lines t)
- '(truncate-partial-width-windows nil))
+ '(truncate-partial-width-windows nil)
+ '(zotxt-default-search-method :everything))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
