@@ -27,18 +27,19 @@
  '(org-support-shift-select t)
  '(package-selected-packages
    '(anaconda-mode auctex auto-complete-rst banner-comment bibtex-utils company
-                   company-anaconda company-c-headers company-fuzzy diredfl
-                   docker dockerfile-mode elcord elpher fill-column-indicator
-                   fzf gdscript-mode gemini-mode gh-md graphviz-dot-mode
-                   groovy-mode helm helm-ag helm-lsp helm-projectile helm-swoop
-                   hl-sentence json-mode julia-mode kotlin-mode latex-extra
-                   ligature list-unicode-display lorem-ipsum lsp-java lsp-julia
-                   lsp-latex lsp-pyright lsp-ui magit markdown-mode mood-line
-                   multiple-cursors nasm-mode org-fragtog org-roam org-roam-ui
-                   pdf-tools poporg powershell projectile python-docstring
-                   pyvenv rainbow-delimiters rainbow-identifiers sideline-lsp
-                   sql-indent toml-mode treemacs-projectile use-package web-mode
-                   wucuo yaml yaml-mode yasnippet yasnippet-snippets zotxt))
+                   company-anaconda company-c-headers company-fuzzy copilot-chat
+                   diredfl docker dockerfile-mode elcord elpher
+                   fill-column-indicator fzf gdscript-mode gemini-mode gh-md
+                   graphviz-dot-mode groovy-mode helm helm-ag helm-lsp
+                   helm-projectile helm-swoop hl-sentence json-mode julia-mode
+                   kotlin-mode latex-extra ligature list-unicode-display
+                   lorem-ipsum lsp-java lsp-julia lsp-latex lsp-pyright lsp-ui
+                   magit markdown-mode mood-line multiple-cursors nasm-mode
+                   org-fragtog org-roam org-roam-ui pdf-tools poporg powershell
+                   projectile python-docstring pyvenv rainbow-delimiters
+                   rainbow-identifiers sideline-lsp sql-indent toml-mode
+                   treemacs-projectile use-package web-mode wucuo yaml yaml-mode
+                   yasnippet yasnippet-snippets zotxt))
  '(save-place-mode t)
  '(scroll-bar-mode nil)
  '(scroll-down-aggressively 0.25)

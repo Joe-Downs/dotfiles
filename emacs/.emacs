@@ -102,6 +102,8 @@
 (put 'downcase-region 'disabled nil)
 
 ;;; Package Customization
+;;;; AI Stuffs
+(use-package copilot-chat)
 
 ;;;; Company
 ;; Use company-mode (autocompletion) everywhere
