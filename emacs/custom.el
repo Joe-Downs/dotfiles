@@ -16,7 +16,6 @@
  '(inhibit-startup-screen t)
  '(lsp-ui-doc-position 'at-point)
  '(lsp-ui-doc-show-with-cursor t)
- '(org-agenda-files nil)
  '(org-cite-global-bibliography '("~/git/roam-notes/refs.bib"))
  '(org-duration-format '((special . h:mm)))
  '(org-format-latex-options

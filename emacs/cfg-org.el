@@ -1,5 +1,33 @@
-;;;; org-mode Customization
-(setq org-adapt-indentation t)
+;;;; Org Related Customization (org-mode, org-roam, etc)
+(setq org-dir (file-truename "~/git/roam-notes/"))
+
+;;; org-mode Customization
+;;(setq org-adapt-indentation t)
+(use-package org
+  :ensure t
+  :bind (("C-c c" . org-capture)
+         ("C-c g" . org-agenda)
+         )
+  :custom
+  ((org-adapt-indentation t)
+   (org-agenda-files `("tasks.org"
+                       "inbox.org"
+                       "cse/homelab/tasks.org"
+                       "school/thesis/thesis-tasks.org"
+                       "school/thesis/thesis-plan.org"
+                       "school/assignments.org"))
+   (org-capture-templates `(("i" "Inbox" entry  (file "inbox.org")
+                            ,(concat "* TODO %?\n"
+                                     "  /Entered on/ %U"))
+                           ))
+   (org-directory org-dir)
+   (org-global-properties
+    '(("Effort_ALL" . "0:00 0:05 0:10 0:30 0:45 1:00 2:00 3:00 4:00 5:00 6:00 7:00")))
+   (org-log-done 'time)
+   (org-outline-path-complete-in-steps nil)
+   (org-refile-targets '((org-agenda-files :maxlevel . 2)))
+   (org-refile-use-outline-path 'file)
+   ))
 
 ;; Automatically toggle LaTeX fragments in org-mode when cursor is over them
 (use-package org-fragtog
