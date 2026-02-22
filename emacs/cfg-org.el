@@ -10,16 +10,28 @@
          )
   :custom
   ((org-adapt-indentation t)
+   (org-agenda-current-time-string "<- Now --------")
    (org-agenda-files `("tasks.org"
                        "inbox.org"
                        "cse/homelab/tasks.org"
                        "school/thesis/thesis-tasks.org"
                        "school/thesis/thesis-plan.org"
                        "school/assignments.org"))
+   (org-agenda-start-on-weekday 1)
+   (org-agenda-start-hour 6)
+   (org-agenda-end-hour 24)
+   (org-agenda-time-grid
+    '((daily today week)
+      (0800 0830 0900 0930 1000 1030 1100 1130 1200 1230 1300 1330
+            1400 1430 1500 1530 1600 1630 1700 1730
+            1800 1830 1900 1930 2000 2030 2100 2130
+            2200 2230 2300 2330)
+      " ..... "
+      "---------------"))
    (org-capture-templates `(("i" "Inbox" entry  (file "inbox.org")
-                            ,(concat "* TODO %?\n"
-                                     "  /Entered on/ %U"))
-                           ))
+                             ,(concat "* TODO %?\n"
+                                      "  /Entered on/ %U"))
+                            ))
    (org-directory org-dir)
    (org-global-properties
     '(("Effort_ALL" . "0:00 0:05 0:10 0:30 0:45 1:00 2:00 3:00 4:00 5:00 6:00 7:00")))
