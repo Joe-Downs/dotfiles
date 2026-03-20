@@ -28,6 +28,33 @@
             2200 2230 2300 2330)
       " ..... "
       "---------------"))
+   ;========================== Custom org-agenda Views =========================
+   (org-agenda-custom-commands
+      '(("g" "Get Things Done (GTD)"
+         ((agenda ""
+                  (;; (org-agenda-skip-function
+                   ;;  ;; Don't show done entries
+                   ;;  '(org-agenda-skip-entry-if 'todo '("DONE")))
+                   (org-deadline-warning-days 0)))
+          (todo "TODO"
+                ((org-agenda-skip-function
+                  '(org-agenda-skip-entry-if 'deadline))
+                 (org-agenda-prefix-format "  %i %-12:c [%e] ")
+                 (org-agenda-overriding-header "\nTasks\n")))
+          ;; (agenda nil
+          ;;         ((org-agenda-entry-types '(:deadline))
+          ;;          ;;(org-agenda-format-date "")
+          ;;          ;;(org-deadline-warning-days 7)
+          ;;          (org-agenda-skip-function
+          ;;           '(org-agenda-skip-entry-if 'notregexp "\\* TODO"))
+          ;;          (org-agenda-overriding-header "\nDeadlines")))
+          (tags-todo "inbox"
+                     ((org-agenda-prefix-format "  %?-12t% s")
+                      (org-agenda-overriding-header "\nInbox\n")))
+          (tags "CLOSED>=\"<today>\""
+                ((org-agenda-overriding-header "\nCompleted Today\n")))))))
+
+   ;============================= Capture Templates ============================
    (org-capture-templates `(("i" "Inbox" entry  (file "inbox.org")
                              ,(concat "* TODO %?\n"
                                       "  /Entered on/ %U"))
