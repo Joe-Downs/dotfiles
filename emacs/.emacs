@@ -10,24 +10,6 @@
 (setq custom-file (concat home-emacs-d "custom.el"))
 (load custom-file)
 
-;; Set and load the keybindings file (keybinds.el) for all my custom-set
-;; keyboard shortcuts
-(setq keybinds-file (concat home-emacs-d "keybinds.el"))
-(load keybinds-file)
-
-;; Custom-set keywords for syntax highlightling
-(setq keywords-file (concat home-emacs-d "keywords.el"))
-(load keywords-file)
-
-;; Custon functions for (re-)use in things like snippets
-(load (concat home-emacs-d "functions.el"))
-
-;; Disable the menu bar
-(menu-bar-mode 0)
-
-;; Use mood-line for a simpler mode line display
-(mood-line-mode 1)
-
 ;; Enable installation of packages from MELPA (Milkypostman's Emacs Lisp Package
 ;; Archive). Code below taken from https://melpa.org/#/getting-started
 (require 'package)
@@ -48,6 +30,25 @@
 ;; beginning of file in (custom-set-variables)). To interactively add more
 ;; packages to this list use M-x package-list-packages
 (mapc 'package-install package-selected-packages)
+
+;; Set and load the keybindings file (keybinds.el) for all my custom-set
+;; keyboard shortcuts
+(setq keybinds-file (concat home-emacs-d "keybinds.el"))
+(load keybinds-file)
+
+;; Custom-set keywords for syntax highlightling
+(setq keywords-file (concat home-emacs-d "keywords.el"))
+(load keywords-file)
+
+;; Custon functions for (re-)use in things like snippets
+(load (concat home-emacs-d "functions.el"))
+
+;; Disable the menu bar
+(menu-bar-mode 0)
+
+;; Use mood-line for a simpler mode line display
+(mood-line-mode 1)
+
 
 ;; A fill column indicator is available natively as a part of Emacs 27. If
 ;; running version 26 or below, instead use fill-column-indicator. Regardless of
