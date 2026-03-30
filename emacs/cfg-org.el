@@ -13,6 +13,7 @@
    (org-agenda-current-time-string "<- Now --------")
    (org-agenda-files `("tasks.org"
                        "inbox.org"
+                       "issues.org"
                        "cse/homelab/tasks.org"
                        "school/thesis/thesis-tasks.org"
                        "school/thesis/thesis-plan.org"
