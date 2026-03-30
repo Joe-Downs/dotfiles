@@ -80,6 +80,23 @@
       auto-save-interval 200            ; number of keystrokes between auto-saves (default: 300)
       )
 
+;; Desktop Save Mode
+(desktop-save-mode 1)
+;; Only instantly restore 10 buffers (the reset are restored when Emacs is idle)
+(setq desktop-restore-eager 10)
+
+;;; General Editor Customization
+;; auto-fill-mode
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
+
+;; Use line numbers only in programming and text modes
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
+(add-hook 'text-mode-hook #'display-line-numbers-mode)
+
+;; Enable downcase-/upcase-region
+(put 'downcase-region 'disabled nil)
+(put 'upcase-region 'disabled nil)
+
 ;; Show trailing whitespace only in programming and text modes (i.e., not in
 ;; minibuffers)
 (defun visible-whitespace () (setq show-trailing-whitespace t))
@@ -88,19 +105,6 @@
 
 ;; Don't use tabs for indenting
 (setq-default indent-tabs-mode nil)
-
-;; Desktop Save Mode
-(desktop-save-mode 1)
-;; Only instantly restore 10 buffers (the reset are restored when Emacs is idle)
-(setq desktop-restore-eager 10)
-
-;;; Line Numbers
-;; Use line numebrs only in programming and text modes
-(add-hook 'prog-mode-hook #'display-line-numbers-mode)
-(add-hook 'text-mode-hook #'display-line-numbers-mode)
-
-;; Enable downcase-region
-(put 'downcase-region 'disabled nil)
 
 ;;; Package Customization
 ;;;; AI Stuffs
@@ -309,8 +313,6 @@
 
 (use-package python-docstring
   :hook (python-mode . python-docstring-mode))
-
-(put 'upcase-region 'disabled nil)
 
 ;; Ligatures
 (use-package ligature
