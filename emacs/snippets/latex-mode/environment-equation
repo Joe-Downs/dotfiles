@@ -1,5 +1,6 @@
 # -*- mode: snippet -*-
 # name: Environment Equation
+# key: eq
 # --
 \begin{equation}
   $1
