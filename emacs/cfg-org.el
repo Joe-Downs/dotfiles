@@ -71,9 +71,10 @@
    ))
 
 ;; Automatically toggle LaTeX fragments in org-mode when cursor is over them
-(use-package org-fragtog
-:hook (org-mode . org-fragtog) ; this auto-enables it when you enter an org-buffer
-)
+;; (use-package org-fragtog
+;;   :ensure t
+;;   :hook (org-mode . org-fragtog-mode) ; this auto-enables it when you enter an org-buffer
+;; )
 
 ;;; org-roam Customization
 ;; Sample Config from the git repo
