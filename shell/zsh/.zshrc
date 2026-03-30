@@ -40,6 +40,9 @@ NEWLINE=$'\n'
 PS1="%F{green}[%*]%F{yellow}%n@%m:%F{red}%~${NEWLINE}%F{cyan}%(!.#.$)%f "
 
 # ================================= $PATH Setup ================================
+export ANDROID_HOME=~/android-sdk
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin:$ANDROID_HOME/platform-tools
+
 export PATH="$HOME/.build/bin:$HOME/.local/bin:$PATH"
 export LD_LIBRARY_PATH="$HOME/.build/lib/:$LD_LIBRARY_PATH"
 
