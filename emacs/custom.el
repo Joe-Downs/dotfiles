@@ -94,6 +94,7 @@
  '(minibuffer-prompt ((t (:foreground "#00ffff"))))
  '(mood-line-unimportant ((t (:foreground "indian red" :weight bold))))
  '(org-formula ((t (:foreground "#5fd75f"))))
+ '(org-link ((t (:inherit link :underline nil :weight bold))))
  '(org-table ((t (:foreground "#5c5cff"))))
  '(outline-1 ((t (:foreground "#ffafff"))))
  '(outline-2 ((t (:foreground "#ff8787"))))
