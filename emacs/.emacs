@@ -10,6 +10,11 @@
 (setq custom-file (concat home-emacs-d "custom.el"))
 (load custom-file)
 
+;; Add the themes directory to the theme load path and load the default theme.
+;; Switch between jd-dark and jd-light with M-x load-theme.
+(add-to-list 'custom-theme-load-path (concat home-emacs-d "themes/"))
+(load-theme 'jd-dark t)
+
 ;; Enable installation of packages from MELPA (Milkypostman's Emacs Lisp Package
 ;; Archive). Code below taken from https://melpa.org/#/getting-started
 (require 'package)
