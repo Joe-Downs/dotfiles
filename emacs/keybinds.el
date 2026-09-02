@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; keybinds.el
 ;; This file stores all my manually-set keyboard shortcuts; redefining shortcuts
 ;; that don't quite work for me.

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;;; Helm Customization
 ;; Taken from https://tuhdo.github.io/helm-intro.html
 (require 'helm)

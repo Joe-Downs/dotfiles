@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; Octave
 (font-lock-add-keywords 'octave-mode
 			;; Highlight variables in assignment, skip ==

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;;; Org Related Customization (org-mode, org-roam, etc)
 (setq org-dir (file-truename "~/git/roam-notes/"))
 

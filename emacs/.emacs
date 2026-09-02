@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t; -*-
 ;;; Emacs Setup
 ;; Add $HOME/git/dotfiles/emacs to the load path
 (setq home-emacs-d (expand-file-name "~/git/dotfiles/emacs/"))
