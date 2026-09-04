@@ -131,7 +131,10 @@
 ;; Initialize backends for different company-related packages AFTER company has
 ;; loaded, so that this variable actually exists.
 (eval-after-load 'company
-  '(add-to-list 'company-backends 'company-c-headers))
+  '(progn
+     (add-to-list 'company-backends 'company-reftex-citations)
+     (add-to-list 'company-backends 'company-reftex-labels)
+     (add-to-list 'company-backends 'company-c-headers)))
 
 ;; Turn off company-dabbrev downcasing (e.g., turning "fooBar" to "foobar")
 (setq company-dabbrev-downcase nil)
@@ -248,6 +251,10 @@
 ;; Turn off fontifying (e.g., making sub- and super-scripts smaller)
 (setq tex-fontify-script nil)
 (setq font-latex-fontify-script nil)
+
+;; Configure bibliography for citation autocomplete
+(setq reftex-default-bibliography '("~/refs.bib"))
+(setq bibtex-completion-bibliography '("~/refs.bib"))
 
 ;;;; LSP Configs
 ;; Add ~/.cargo/bin to the exec path
