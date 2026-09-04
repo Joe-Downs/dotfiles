@@ -83,6 +83,9 @@
   :ensure t
   :custom
   (org-roam-directory (file-truename "~/git/roam-notes/"))
+  ;; Default excludes any path containing "data/" (org-attach-id-dir),
+  ;; which silently drops notes under directories like cse/data/.
+  (org-roam-file-exclude-regexp nil)
   :bind (("C-c n l" . org-roam-buffer-toggle)
          ("C-c n f" . org-roam-node-find)
          ("C-c n g" . org-roam-graph)
