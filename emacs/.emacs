@@ -252,6 +252,10 @@
 (setq tex-fontify-script nil)
 (setq font-latex-fontify-script nil)
 
+;; Turn on RefTeX so company-reftex-citations has something to complete from
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex) ; AUCTeX's LaTeX-mode
+(add-hook 'latex-mode-hook 'turn-on-reftex) ; built-in latex-mode, just in case
+
 ;; Configure bibliography for citation autocomplete
 (setq reftex-default-bibliography '("~/refs.bib"))
 (setq bibtex-completion-bibliography '("~/refs.bib"))
