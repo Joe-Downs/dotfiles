@@ -34,6 +34,7 @@
                  :html-background "Transparent" :html-scale 1.0 :matchers
                  ("begin" "$1" "$" "$$" "\\(" "\\[")))
  '(org-id-link-to-org-use-id 'create-if-interactive-and-no-custom-id)
+ '(org-list-allow-alphabetical t)
  '(org-support-shift-select t)
  '(package-selected-packages
    '(anaconda-mode auctex auto-complete-rst banner-comment bibtex-utils company
