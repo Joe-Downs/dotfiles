@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: chapter
+# key: chap
+# --
+\chapter{${1:name}}
+\label{sec:${2:label}}
+
+$0
