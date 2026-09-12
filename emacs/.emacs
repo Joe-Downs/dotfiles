@@ -71,7 +71,7 @@
 
 ;; Create any and all backups/autosave files in their own, separate directories
 ;; This snippet of code was taken from https://stackoverflow.com/a/18330742
-(defvar --backup-directory (concat user-emacs-directory "backups"))
+(defvar --backup-directory (concat user-emacs-directory "backups/"))
 (if (not (file-exists-p --backup-directory))
     (make-directory --backup-directory t))
 (setq backup-directory-alist `(("." . ,--backup-directory)))
