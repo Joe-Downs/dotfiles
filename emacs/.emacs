@@ -212,8 +212,10 @@
 (pdf-loader-install) ; On demand loading, leads to faster startup time
 
 ;;; poporg
-(autoload 'poporg-dwim "poporg" nil t)
-(global-set-key (kbd "C-c \"") 'poporg-dwim)
+(use-package poporg
+  :config
+  (setq poporg-edit-hook '(org-mode))
+  (autoload 'poporg-dwim "poporg" nil t))
 
 ;;; Projectile
 (require 'projectile)
