@@ -1,7 +1,8 @@
 ;;; -*- lexical-binding: t; -*-
 ;;; Emacs Setup
+(setq home-dotfiles-d (expand-file-name "~/git/dotfiles/"))
 ;; Add $HOME/git/dotfiles/emacs to the load path
-(setq home-emacs-d (expand-file-name "~/git/dotfiles/emacs/"))
+(setq home-emacs-d (concat home-dotfiles-d "emacs/"))
 (if (file-exists-p home-emacs-d)
     (setq load-path (append (list home-emacs-d) load-path)))
 
@@ -155,6 +156,8 @@
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 ;; Use wucuo
+(setq ispell-program-name "hunspell")
+(setq ispell-personal-dictionary (concat home-dotfiles-d "personal.dic"))
 (add-hook 'after-change-major-mode-hook 'wucuo-start)
 ;;(add-hook 'text-mode-hook 'wucuo-start)
 
