@@ -111,13 +111,19 @@
        (when (> level 0) (concat (org-roam-node-file-title node) " > "))
        (when (> level 1) (concat (string-join (org-roam-node-olp node) " > ") " > "))
        (org-roam-node-title node))))
-  (setq org-roam-node-display-template (concat "${hierarchy:*} " (propertize "${tags:30}" 'face 'org-tag)))
-  ;; org-roam-node-read--to-candidate uses (window-width) of the calling window,
-  ;; which gives wrong widths when invoked from a split pane. Use frame width instead.
-  (advice-add 'org-roam-node-read--to-candidate :around
-              (lambda (orig node template)
-                (cl-letf (((symbol-function 'window-width) (lambda (&rest _) (frame-width))))
-                  (funcall orig node template))))
+  ;; Compute tag column width as 25% of the current frame width each invocation,
+  ;; so it scales on wide monitors and stays usable on narrow ones.
+  ;; cl-letf overrides window-width so ${hierarchy:*} fills the correct remainder.
+  (advice-add 'org-roam-node-read :around
+              (lambda (orig &rest args)
+                (let* ((fw (frame-width))
+                       (tags-width (round (* fw 0.25)))
+                       (org-roam-node-display-template
+                        (concat "${hierarchy:*} "
+                                (propertize (format "${tags:%d}" tags-width)
+                                            'face 'org-tag))))
+                  (cl-letf (((symbol-function 'window-width) (lambda (&rest _) fw)))
+                    (apply orig args)))))
   (org-roam-db-autosync-mode)
   ;; If using org-roam-protocol
   (require 'org-roam-protocol))
