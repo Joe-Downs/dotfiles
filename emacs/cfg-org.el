@@ -104,16 +104,20 @@
          ("C-c r r" . org-roam-ref-remove)
          )
   :config
-  ;; Define method to get the hierarchy for (sub)heading nodes. Display
-  ;; something like: Title > Heading > Subheading
+  ;; Display hierarchy like: Title > Heading > Subheading
   (cl-defmethod org-roam-node-hierarchy ((node org-roam-node))
     (let ((level (org-roam-node-level node)))
       (concat
        (when (> level 0) (concat (org-roam-node-file-title node) " > "))
        (when (> level 1) (concat (string-join (org-roam-node-olp node) " > ") " > "))
        (org-roam-node-title node))))
-  ;; TODO: this should be percentage based, or right-align the tags
-  (setq org-roam-node-display-template (concat "${hierarchy:*} " (propertize "${tags:*}" 'face 'org-tag)))
+  (setq org-roam-node-display-template (concat "${hierarchy:*} " (propertize "${tags:30}" 'face 'org-tag)))
+  ;; org-roam-node-read--to-candidate uses (window-width) of the calling window,
+  ;; which gives wrong widths when invoked from a split pane. Use frame width instead.
+  (advice-add 'org-roam-node-read--to-candidate :around
+              (lambda (orig node template)
+                (cl-letf (((symbol-function 'window-width) (lambda (&rest _) (frame-width))))
+                  (funcall orig node template))))
   (org-roam-db-autosync-mode)
   ;; If using org-roam-protocol
   (require 'org-roam-protocol))
