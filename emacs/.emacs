@@ -262,8 +262,16 @@
 (add-hook 'latex-mode-hook 'turn-on-reftex) ; built-in latex-mode, just in case
 
 ;; Configure bibliography for citation autocomplete
-(setq reftex-default-bibliography '("~/refs.bib"))
-(setq bibtex-completion-bibliography '("~/refs.bib"))
+(setq reftex-default-bibliography '("~/refs.bib" "~/thesis.bib"))
+(setq bibtex-completion-bibliography '("~/refs.bib" "~/thesis.bib"))
+
+;; Highlight cleveref commands like \ref & \cite
+(with-eval-after-load "font-latex"
+  (font-latex-add-keywords '(("cref"      "*{")
+                              ("Cref"      "*{")
+                              ("cpageref"  "*{")
+                              ("labelcref" "{"))
+                            'reference))
 
 ;;;; LSP Configs
 ;; Add ~/.cargo/bin to the exec path
