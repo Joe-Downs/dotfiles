@@ -8,3 +8,4 @@
 (global-set-key (kbd "C-c s n") 'yas-new-snippet)
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c \"") 'poporg-dwim)
+(global-set-key (kbd "C-x C-i") 'upcase-initials-region)
