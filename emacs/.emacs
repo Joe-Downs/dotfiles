@@ -422,3 +422,31 @@
 (use-package zotxt
   :hook (org-mode . org-zotxt-mode)
  )
+
+(defun jd/reformat-package-selected-packages ()
+  "Reformat package-selected-packages in custom-file with one package per line."
+  (when (and (boundp 'custom-file) custom-file (file-exists-p custom-file))
+    (with-current-buffer (find-file-noselect custom-file)
+      (save-excursion
+        (goto-char (point-min))
+        (when (search-forward "'(package-selected-packages" nil t)
+          (search-backward "'(package-selected-packages")
+          (let* ((start (point))
+                 (col (current-column))
+                 ;; '(package-selected-packages '(pkg...)) reads as
+                 ;; (quote (package-selected-packages (quote (pkg...))))
+                 (entry (read (current-buffer)))
+                 (end (point))
+                 (packages (sort (copy-sequence (cadr (cadr (cadr entry))))
+                                 (lambda (a b) (string< (symbol-name a)
+                                                        (symbol-name b)))))
+                 (list-indent (make-string (+ col 2) ?\s))
+                 (pkg-indent (make-string (+ col 4) ?\s)))
+            (delete-region start end)
+            (insert (format "'(package-selected-packages\n%s'(%s))"
+                            list-indent
+                            (mapconcat #'symbol-name packages
+                                       (concat "\n" pkg-indent)))))))
+      (save-buffer))))
+
+(advice-add 'custom-save-all :after #'jd/reformat-package-selected-packages)
