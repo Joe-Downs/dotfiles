@@ -133,8 +133,8 @@
 ;; loaded, so that this variable actually exists.
 (eval-after-load 'company
   '(progn
-     (add-to-list 'company-backends 'company-reftex-citations)
-     (add-to-list 'company-backends 'company-reftex-labels)
+     ;;(add-to-list 'company-backends 'company-reftex-citations)
+     ;;(add-to-list 'company-backends 'company-reftex-labels)
      (add-to-list 'company-backends 'company-c-headers)))
 
 ;; Turn off company-dabbrev downcasing (e.g., turning "fooBar" to "foobar")
@@ -258,12 +258,12 @@
 (setq font-latex-fontify-script nil)
 
 ;; Turn on RefTeX so company-reftex-citations has something to complete from
-(add-hook 'LaTeX-mode-hook 'turn-on-reftex) ; AUCTeX's LaTeX-mode
-(add-hook 'latex-mode-hook 'turn-on-reftex) ; built-in latex-mode, just in case
+;;(add-hook 'LaTeX-mode-hook 'turn-on-reftex) ; AUCTeX's LaTeX-mode
+;;(add-hook 'latex-mode-hook 'turn-on-reftex) ; built-in latex-mode, just in case
 
 ;; Configure bibliography for citation autocomplete
-(setq reftex-default-bibliography '("~/refs.bib" "~/thesis.bib"))
-(setq bibtex-completion-bibliography '("~/refs.bib" "~/thesis.bib"))
+;(setq reftex-default-bibliography '("~/refs.bib" "~/thesis.bib"))
+;(setq bibtex-completion-bibliography '("~/refs.bib" "~/thesis.bib"))
 
 ;; Highlight cleveref commands like \ref & \cite
 (with-eval-after-load "font-latex"
@@ -284,6 +284,9 @@
 (with-eval-after-load "tex-mode"
  (add-hook 'tex-mode-hook 'lsp)
  (add-hook 'latex-mode-hook 'lsp))
+
+(with-eval-after-load "latex"
+ (add-hook 'LaTeX-mode-hook 'lsp))
 
 ;; For bibtex
 (with-eval-after-load "bibtex"

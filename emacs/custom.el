@@ -47,7 +47,6 @@
      company-anaconda
      company-c-headers
      company-fuzzy
-     company-reftex
      copilot-chat
      diredfl
      docker
