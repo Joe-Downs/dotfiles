@@ -285,32 +285,39 @@
                                       'reference)))
 
 ;;;; LSP Configs
-;; Add ~/.cargo/bin to the exec path
-(setq cargo-bin-d (expand-file-name "~/.cargo/bin/"))
-(setq exec-path (append (list cargo-bin-d) exec-path))
+(use-package lsp-latex
+  :init
+  ;; Add ~/.cargo/bin to the exec path (texlab is often installed via cargo)
+  (setq cargo-bin-d (expand-file-name "~/.cargo/bin/"))
+  (setq exec-path (append (list cargo-bin-d) exec-path))
+  :hook ((tex-mode    . lsp)
+         (latex-mode  . lsp)
+         (LaTeX-mode  . lsp)
+         (bibtex-mode . lsp))
+  :bind (:map LaTeX-mode-map
+              :package latex
+              ("C-c C-g" . lsp-latex-forward-search))
+  :config
+  ;; texlab only treats \ref and \eqref as "reference" commands out of the
+  ;; box, so cleveref's \cref/\Cref etc. get no completion or go-to-definition
+  ;; support unless we register them explicitly. Include ref/eqref too, in
+  ;; case this list overrides texlab's built-ins rather than extending them.
+  (setq lsp-latex-experimental-label-reference-commands
+        '("ref" "eqref" "cref" "Cref" "labelcref" "vref" "Vref" "autoref"))
+  (setq lsp-latex-experimental-label-reference-range-commands
+        '("crefrange" "Crefrange"))
 
-;; LaTeX
-(require 'lsp-latex)
-
-;; texlab only treats \ref and \eqref as "reference" commands out of the
-;; box, so cleveref's \cref/\Cref etc. get no completion or go-to-definition
-;; support unless we register them explicitly. Include ref/eqref too, in
-;; case this list overrides texlab's built-ins rather than extending them.
-(setq lsp-latex-experimental-label-reference-commands
-      '("ref" "eqref" "cref" "Cref" "labelcref" "vref" "Vref" "autoref"))
-(setq lsp-latex-experimental-label-reference-range-commands
-      '("crefrange" "Crefrange"))
-
-(with-eval-after-load "tex-mode"
- (add-hook 'tex-mode-hook 'lsp)
- (add-hook 'latex-mode-hook 'lsp))
-
-(with-eval-after-load "latex"
- (add-hook 'LaTeX-mode-hook 'lsp))
-
-;; For bibtex
-(with-eval-after-load "bibtex"
- (add-hook 'bibtex-mode-hook 'lsp))
+  ;; View PDFs inside Emacs via pdf-tools, synced with SyncTeX.
+  ;; `lsp-latex-build' already passes -synctex=1 to latexmk by default, so we
+  ;; just need forward search (TeX -> PDF, C-c C-g) to hand off to pdf-tools
+  ;; via emacsclient. Backward search (PDF -> TeX) works out of the box via
+  ;; pdf-tools itself: double-click or C-mouse-1 on a line in the PDF buffer.
+  (server-start)
+  (setq lsp-latex-build-forward-search-after t) ; forward-search automatically after building
+  (setq lsp-latex-forward-search-executable "emacsclient")
+  (setq lsp-latex-forward-search-args
+        '("--eval"
+          "(lsp-latex-forward-search-with-pdf-tools \"%f\" \"%p\" \"%l\")")))
 
 (use-package lsp-mode
   :hook ((c-mode          ; clangd
