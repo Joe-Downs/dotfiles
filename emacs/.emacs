@@ -270,13 +270,19 @@
 ;(setq reftex-default-bibliography '("~/refs.bib" "~/thesis.bib"))
 ;(setq bibtex-completion-bibliography '("~/refs.bib" "~/thesis.bib"))
 
-;; Highlight cleveref commands like \ref & \cite
-(with-eval-after-load "font-latex"
-  (font-latex-add-keywords '(("cref"      "*{")
-                              ("Cref"      "*{")
-                              ("cpageref"  "*{")
-                              ("labelcref" "{"))
-                            'reference))
+;; Highlight cleveref commands like \ref & \cite. This must run from
+;; TeX-mode-hook (once per buffer), not just once at startup: the keywords
+;; variable font-latex-add-keywords writes to is declared with
+;; `defvar-local', so setting it outside a LaTeX buffer only makes it local
+;; to whatever buffer happened to be current at load time and never affects
+;; the default value new LaTeX buffers pick up.
+(add-hook 'TeX-mode-hook
+          (lambda ()
+            (font-latex-add-keywords '(("cref"      "*{")
+                                        ("Cref"      "*{")
+                                        ("cpageref"  "*{")
+                                        ("labelcref" "{"))
+                                      'reference)))
 
 ;;;; LSP Configs
 ;; Add ~/.cargo/bin to the exec path
@@ -285,6 +291,15 @@
 
 ;; LaTeX
 (require 'lsp-latex)
+
+;; texlab only treats \ref and \eqref as "reference" commands out of the
+;; box, so cleveref's \cref/\Cref etc. get no completion or go-to-definition
+;; support unless we register them explicitly. Include ref/eqref too, in
+;; case this list overrides texlab's built-ins rather than extending them.
+(setq lsp-latex-experimental-label-reference-commands
+      '("ref" "eqref" "cref" "Cref" "labelcref" "vref" "Vref" "autoref"))
+(setq lsp-latex-experimental-label-reference-range-commands
+      '("crefrange" "Crefrange"))
 
 (with-eval-after-load "tex-mode"
  (add-hook 'tex-mode-hook 'lsp)
