@@ -45,6 +45,7 @@
      bibtex-utils
      company
      company-anaconda
+     company-box
      company-c-headers
      company-fuzzy
      copilot-chat

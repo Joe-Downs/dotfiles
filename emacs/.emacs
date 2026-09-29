@@ -137,6 +137,11 @@
      ;;(add-to-list 'company-backends 'company-reftex-labels)
      (add-to-list 'company-backends 'company-c-headers)))
 
+;; Show citation title/author doc panel alongside the completion dropdown
+(use-package company-box
+  :hook (company-mode . company-box-mode)
+  :config (setq company-box-doc-enable t))
+
 ;; Turn off company-dabbrev downcasing (e.g., turning "fooBar" to "foobar")
 (setq company-dabbrev-downcase nil)
 
