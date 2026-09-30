@@ -296,7 +296,8 @@
          (bibtex-mode . lsp))
   :bind (:map LaTeX-mode-map
               :package latex
-              ("C-c C-g" . lsp-latex-forward-search))
+              ("C-c C-g" . lsp-latex-forward-search)
+              ("C-c C-c" . lsp-latex-build))
   :config
   ;; texlab only treats \ref and \eqref as "reference" commands out of the
   ;; box, so cleveref's \cref/\Cref etc. get no completion or go-to-definition
