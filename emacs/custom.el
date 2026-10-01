@@ -16,6 +16,7 @@
  '(fill-column 80)
  '(fringe-mode 0 nil (fringe))
  '(helm-buffer-max-length 40)
+ '(helm-case-fold-search t)
  '(helm-full-frame t)
  '(inhibit-startup-screen t)
  '(lsp-ui-doc-position 'at-point)
