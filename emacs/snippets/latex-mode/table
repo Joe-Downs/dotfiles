@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: table
+# key: tbl
+# --
+\begin{table}[ht]
+  \centering
+  \caption{${1:caption}}
+  \label{tbl:${2:label}}
+  \begin{tabular}{*{${3:num columns}}c}
+    $0
+  \end{tabular}
+\end{table}
