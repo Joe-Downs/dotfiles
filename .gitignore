@@ -23,3 +23,6 @@
 
 # Ignore local claude settings
 **/.claude/settings.local.json
+
+# Ignore synctex generated files
+*.synctex.gz
